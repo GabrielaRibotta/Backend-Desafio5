@@ -1,20 +1,21 @@
-import { Router } from "express";
+import { Router } from 'express';
+import { usersModel } from '../persistence/models/users.model.js'
 
 const usersRouter = Router()
 
-usersRouter.post('/signup', (req, res)=>{
-    const {firstName, lastName, email, password} = req.body
-    const user = users.findOne(e => e.email === email)
+usersRouter.post('/signup', async (req, res)=>{
+    const {firstName, lastName, email, age, password} = req.body
+    const user = await usersModel.findOne(e => e.email === email);
     if(user){
         return res.redirect('api/views/errorSignup')
     }
-    users.push(req.body)
+    await usersModel.create(req.body)
     res.redirect('/api/views/')
 })
 
-usersRouter.post('/login', (req, res)=>{
+usersRouter.post('/login', async (req, res)=>{
     const {email, password} = req.body
-    const user = users.findOne(e => e.email === email && e.password === password)
+    const user = await usersModel.findOne(e => e.email === email && e.password === password);
     if(!user){
         return res.redirect('api/views/errorLogin')
     }
