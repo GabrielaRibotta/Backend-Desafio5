@@ -1,20 +1,24 @@
 <h1>Registrate</h1> 
 <form action="/api/users/signup" method="post">
     <div class="mb-3">
-        <label for="userFirstName" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="userFirstName" />
+        <label for="firstName" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="firstName" />
     </div>
     <div class="mb-3">
-        <label for="userLastName" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="userLastName" />
+        <label for="lastName" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="lastName" />
     </div>
     <div class="mb-3">
-        <label for="userEmail" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="userEmail" />
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" />
+    </div>
+        <div class="mb-3">
+        <label for="age" class="form-label">Edad</label>
+        <input type="number" class="form-control" id="age" />
     </div>
     <div class="mb-3">
-        <label for="userPassword" class="form-label">Password</label>
-        <input type="password" class="form-control" id="userPassword" />
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" />
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
